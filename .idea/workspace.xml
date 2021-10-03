@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios">
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="fixing gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633295716030</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios">
+      <created>1633296515187</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633296515187</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixing gitignore">
+      <created>1633296772990</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1633296772990</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +212,7 @@
     <MESSAGE value="EB/FEAT/Item type added  enum" />
     <MESSAGE value="EB/FEAT/Item_Entity_Added, missing few elements from class diagram, basic usage available,tested properly" />
     <MESSAGE value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
+    <MESSAGE value="fixing gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing gitignore" />
   </component>
 </project>

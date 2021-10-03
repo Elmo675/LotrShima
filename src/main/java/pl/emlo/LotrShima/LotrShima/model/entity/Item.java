@@ -67,7 +67,7 @@ public class Item {
     }
 
     private int getPower(int index) {
-        if (powerOfItem == null || index >= powerOfItem.length) {
+        if (powerOfItem == null || index >= powerOfItem.length || index < 0) {
             return 0;
         }
         return powerOfItem[index];
@@ -88,7 +88,7 @@ public class Item {
         int returned;
         if (type != ItemType.ARMOR && type != ItemType.SHIELD) {
             returned = 0;
-        } else if (isNotArmorBodyPartsCoveredInPercentageHasAllFields()) {
+        } else if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
             throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
         } else {
             if (determineIfArmorWillDefend(whereAttacked, percentage)) {
@@ -100,7 +100,7 @@ public class Item {
         return returned;
     }
 
-    private boolean isNotArmorBodyPartsCoveredInPercentageHasAllFields() {
+    private boolean isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized() {
         if (bodyPartsCoveredInPercentage == null) {
             return true;
         }
@@ -135,13 +135,13 @@ public class Item {
     public void setHeldIn(BodyType heldIn) {
         switch (type) {
             case ARMOR:
-                if (isNotArmorBodyPartsCoveredInPercentageHasAllFields()) {
+                if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
                     throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
                 }
                 this.heldIn = heldIn;
                 break;
             case SHIELD:
-                if (isNotArmorBodyPartsCoveredInPercentageHasAllFields()) {
+                if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
                     throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
                 }
                 if (heldIn == BodyType.LEFT_ARM) {
