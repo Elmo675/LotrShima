@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item type added  enum" />
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item type added  enum">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,16 +22,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Item_Entity_Added" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +66,7 @@
       <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ItemTest">
+  <component name="RunManager" selected="JUnit.LotrShimaApplicationTests.contextLoads">
     <configuration name="ItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
@@ -73,7 +82,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemTest.givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -83,13 +92,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
       <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
+      <option name="METHOD_NAME" value="givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemTest.givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +108,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
       <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
+      <option name="METHOD_NAME" value="givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ItemTest" />
-        <item itemvalue="JUnit.ItemTest.givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
-        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
         <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
         <item itemvalue="JUnit.LotrShimaApplicationTests" />
+        <item itemvalue="JUnit.ItemTest" />
+        <item itemvalue="JUnit.ItemTest.givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" />
+        <item itemvalue="JUnit.ItemTest.givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" />
       </list>
     </recent_temporary>
   </component>
