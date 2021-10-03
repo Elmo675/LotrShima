@@ -1,26 +1,25 @@
 package pl.emlo.LotrShima.LotrShima;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Scanner;
-
 @SpringBootApplication
 public class LotrShimaApplication implements CommandLineRunner {
-    private static void print(String message) {
-        System.out.println(message);
-    }
+    private static Logger LOG = LoggerFactory
+            .getLogger(LotrShimaApplication.class);
 
     public static void main(String[] args) {
-        print("APPLICATION START");
+        LOG.info("APPLICATION START");
         SpringApplication.run(LotrShimaApplication.class, args);
-        print("APPLICATION FINISHED");
+        LOG.info("APPLICATION FINISHED");
     }
 
     @Override
     public void run(String... args) {
-        print("cos robimy w grze");
+        LOG.info("cos robimy w grze");
     }
 
 }
