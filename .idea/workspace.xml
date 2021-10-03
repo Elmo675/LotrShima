@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item type added  enum">
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/LotrShimaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/LotrShimaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1yxmK104arC2Nms7AVMt1V8N8I6" />
@@ -28,9 +37,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LotrShimaApplication">
     <configuration name="LotrShimaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplication" />
       <module name="LotrShima" />
@@ -44,9 +54,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LotrShimaApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LotrShimaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.LotrShimaApplicationTests" />
         <item itemvalue="Application.LotrShimaApplication" />
+        <item itemvalue="Application.LotrShimaApplication" />
+        <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -59,6 +104,14 @@
       <option name="presentableId" value="Default" />
       <updated>1633201546845</updated>
     </task>
+    <task id="LOCAL-00001" summary="EB/FEAT/Item type added  enum">
+      <created>1633265699008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633265699008</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,5 +124,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="EB/FEAT/Item type added  enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="EB/FEAT/Item type added  enum" />
   </component>
 </project>
