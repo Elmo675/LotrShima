@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item type added  enum">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/LotrShimaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/LotrShimaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/enums/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/enums/ItemType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
       <list>
         <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -28,6 +32,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1yxmK104arC2Nms7AVMt1V8N8I6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,18 +50,62 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.LotrShimaApplication">
-    <configuration name="LotrShimaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplication" />
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ItemTest">
+    <configuration name="ItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
+      <option name="METHOD_NAME" value="givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
+      <option name="METHOD_NAME" value="givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ItemTest" />
+        <item itemvalue="JUnit.ItemTest.givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
+        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly" />
         <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
         <item itemvalue="JUnit.LotrShimaApplicationTests" />
-        <item itemvalue="Application.LotrShimaApplication" />
-        <item itemvalue="Application.LotrShimaApplication" />
-        <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
