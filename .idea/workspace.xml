@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item type added  enum">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" afterDir="false" />
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633272362459</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios">
+      <created>1633295716030</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1633295716030</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +196,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="EB/FEAT/Item type added  enum" />
     <MESSAGE value="EB/FEAT/Item_Entity_Added, missing few elements from class diagram, basic usage available,tested properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="EB/FEAT/Item_Entity_Added, missing few elements from class diagram, basic usage available,tested properly" />
+    <MESSAGE value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
   </component>
 </project>
