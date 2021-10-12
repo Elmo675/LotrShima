@@ -9,6 +9,7 @@ import pl.emlo.LotrShima.LotrShima.model.enums.ItemType;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -28,9 +29,10 @@ public class Item {
     @Builder.Default
     private ItemType type = ItemType.OTHERS;
 
-    private int[] powerOfItem;
+    @ElementCollection
+    private List<Integer> powerOfItem;
 
-
+    @Enumerated
     private BodyType heldIn;
     @ElementCollection
 //    @CollectionTable(name = "bodyPartsCoveredInPercentage",
@@ -67,13 +69,13 @@ public class Item {
     }
 
     private int getPower(int index) {
-        if (powerOfItem == null || index >= powerOfItem.length || index < 0) {
+        if (powerOfItem == null || index >= powerOfItem.size() || index < 0) {
             return 0;
         }
-        return powerOfItem[index];
+        return powerOfItem.get(index);
     }
 
-    public int getAttackPower(int turns) {
+    public int getAttackPower(int turns) throws InvalidTurns {
         if (type != ItemType.WEAPON) {
             return 0;
         }
@@ -84,7 +86,7 @@ public class Item {
     }
 
 
-    public int getDefensePower(BodyType whereAttacked, int percentage) {
+    public int getDefensePower(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
         int returned;
         if (type != ItemType.ARMOR && type != ItemType.SHIELD) {
             returned = 0;
@@ -132,7 +134,7 @@ public class Item {
         bodyPartsCoveredInPercentage.put(BodyType.LEFT_LEG, rightLeg);
     }
 
-    public void setHeldIn(BodyType heldIn) {
+    public void setHeldIn(BodyType heldIn) throws InvalidBodyPartsCoveredInPercentage, InvalidBodyType {
         switch (type) {
             case ARMOR:
                 if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
@@ -161,16 +163,4 @@ public class Item {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type=" + type +
-                ", powerOfItem=" + Arrays.toString(powerOfItem) +
-                ", quantity=" + quantity +
-                ", weight=" + weight +
-                ", prize=" + prize +
-                '}';
-    }
 }

@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="fixing gitignore">
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Renamed method to more human redable name, secured minus index scenario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LotrShima.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LotrShima.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -60,7 +68,20 @@
       <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LotrShimaApplicationTests.contextLoads">
+  <component name="RunManager" selected="Application.LotrShimaApplication">
+    <configuration name="LotrShimaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplication" />
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
@@ -76,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemTest.givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +107,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
       <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" />
+      <option name="METHOD_NAME" value="givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemTest.givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -102,38 +123,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
       <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" />
+      <option name="METHOD_NAME" value="givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LotrShimaApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemTest.givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LotrShimaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LotrShima" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
+      <option name="METHOD_NAME" value="givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LotrShimaApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.LotrShimaApplicationTests" />
+        <item itemvalue="Application.LotrShimaApplication" />
         <item itemvalue="JUnit.ItemTest" />
-        <item itemvalue="JUnit.ItemTest.givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher" />
-        <item itemvalue="JUnit.ItemTest.givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher" />
+        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" />
+        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" />
+        <item itemvalue="JUnit.ItemTest.givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633296772990</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Renamed method to more human redable name, secured minus index scenario">
+      <created>1633297475693</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633297475693</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +226,7 @@
     <MESSAGE value="EB/FEAT/Item_Entity_Added, missing few elements from class diagram, basic usage available,tested properly" />
     <MESSAGE value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
     <MESSAGE value="fixing gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing gitignore" />
+    <MESSAGE value="Renamed method to more human redable name, secured minus index scenario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed method to more human redable name, secured minus index scenario" />
   </component>
 </project>

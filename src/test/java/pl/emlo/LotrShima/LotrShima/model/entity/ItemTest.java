@@ -1,5 +1,6 @@
 package pl.emlo.LotrShima.LotrShima.model.entity;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyPartsCoveredInPercentage;
@@ -9,16 +10,18 @@ import pl.emlo.LotrShima.LotrShima.model.enums.BodyType;
 import pl.emlo.LotrShima.LotrShima.model.enums.ItemType;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ItemTest {
-    private final int[] DRAGON_SWORD_DAMAGE = new int[]{1, 3, 4};
-    private final int[] HEALING_HERB_POWER = new int[]{1};
-    private final int[] SHIELD_DEFENSE_POWER = new int[]{5};
-    private final int[] ARMOR_DEFENSE_POWER = new int[]{3};
+    private final List<Integer> DRAGON_SWORD_DAMAGE = List.of(1, 3, 4);
+    private final List<Integer> HEALING_HERB_POWER = List.of(1);
+    private final List<Integer> SHIELD_DEFENSE_POWER = List.of(5);
+    private final List<Integer> ARMOR_DEFENSE_POWER = List.of(3);
     private HashMap<BodyType, Integer> bodyPartsCoveredInPercentage;
     private Item weaponItem;
     private Item shieldItem;
@@ -28,7 +31,7 @@ class ItemTest {
 
     @BeforeEach
     void setUp() {
-         bodyPartsCoveredInPercentage = generateArmorBodyPartsCoveredInPercentageForShieldItem();
+        bodyPartsCoveredInPercentage = generateArmorBodyPartsCoveredInPercentageForShieldItem();
         weaponItem = Item.builder()
                 .name("Dragon Sword")
                 .type(ItemType.WEAPON)
@@ -93,6 +96,7 @@ class ItemTest {
         //then
         assertThat(actualHealingPower).isEqualTo(expectedHealingPower);
     }
+
     @Test
     void givenShieldItem_WhenGetHealingPower_ThenReturnZero() {
         //given from setUp
@@ -101,37 +105,47 @@ class ItemTest {
         //then
         assertThat(actualHealingPower).isZero();
     }
+
     @Test
     void givenHealingItemWithNoPower_WhenGetHealingPower_ThenReturnZero() {
         //given from setUp
-        healingItem.setPowerOfItem(new int[]{});
+        healingItem.setPowerOfItem(new LinkedList<>());
         //when
         int actualHealingPower = healingItem.getHealingPower();
         //then
         assertThat(actualHealingPower).isZero();
     }
+
     @Test
-    void givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense(){
+    void givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense() {
         //given from setUp
-        int expectedDefensePower = armorItem.getPowerOfItem()[0];
-        //when
-        //Torso has 40 chance to defend, so 1 percentege should means that we defended properly
-        int actualDefensePower = armorItem.getDefensePower(BodyType.TORSO,1);
-        //then
-        assertThat(actualDefensePower).isEqualTo(expectedDefensePower);
+        int expectedDefensePower = armorItem.getPowerOfItem().get(0);
+        final int[] actualDefensePower = new int[1];
+        Assertions.assertAll(
+                //when
+                () ->  actualDefensePower[0] = armorItem.getDefensePower(BodyType.TORSO, 1),
+                //then
+                () -> assertThat(actualDefensePower[0]).isEqualTo(expectedDefensePower)
+        );
     }
+
     @Test
-    void givenArmorItem_WhenGetDefensePowerWithBiggerChance_ThenReturnZero(){
+    void givenArmorItem_WhenGetDefensePowerWithBiggerChance_ThenReturnZero() {
         //given from setUp
-        //when
+        final int[] actualDefensePower = new int[1];
         //Torso has 40 chance to defend, so 99 percentege should means that we do not defend
-        int actualDefensePower = armorItem.getDefensePower(BodyType.TORSO,99);
-        //then
-        assertThat(actualDefensePower).isZero();
+        Assertions.assertAll(
+                //when
+                () -> actualDefensePower[0] = armorItem.getDefensePower(BodyType.TORSO, 99),
+                //then
+                () -> assertThat(actualDefensePower[0]).isZero()
+        );
     }
+
     @Test
-    void givenArmorItemNotHeld_WhenGetDefensePowerWithSmallerChance_ThenReturnZero(){
+    void givenArmorItemNotHeld_WhenGetDefensePowerWithSmallerChance_ThenReturnZero() {
         //given
+        final int[] actualDefensePower = new int[1];
         armorItem = Item.builder()
                 .name("Dragon Armor")
                 .type(ItemType.ARMOR)
@@ -141,27 +155,34 @@ class ItemTest {
                 .prize(8000.0)
                 .build();
 
-        //when
-        int actualDefensePower = armorItem.getDefensePower(BodyType.TORSO,1);
-        //then
-        assertThat(actualDefensePower).isZero();
+        Assertions.assertAll(
+                //when
+                () -> actualDefensePower[0] = armorItem.getDefensePower(BodyType.TORSO, 1),
+                //then
+                () -> assertThat(actualDefensePower[0]).isZero()
+        );
 
     }
+
     @Test
-    void givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero(){
+    void givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero() {
         //given from setUp
-        //when
-        int actualDefensePower = weaponItem.getDefensePower(BodyType.HEAD,1);
-        //then
-        assertThat(actualDefensePower).isZero();
+        final int[] actualDefensePower = new int[1];
+        Assertions.assertAll(
+                //when
+                () -> actualDefensePower[0] = weaponItem.getDefensePower(BodyType.HEAD, 1),
+                //then
+                () -> assertThat(actualDefensePower[0]).isZero()
+        );
     }
+
     @Test
-    void givenArmorItemWithBadlySetArmorBodyPartsCoveredInPercentageField_WhenGetDefensePower_ThenThrowInvalidArmorBodyPartsCoveredInPercentageException(){
+    void givenArmorItemWithBadlySetArmorBodyPartsCoveredInPercentageField_WhenGetDefensePower_ThenThrowInvalidArmorBodyPartsCoveredInPercentageException() {
         //given
         armorItem.setBodyPartsCoveredInPercentage(null);
         //when
         //then
-        assertThatThrownBy(() -> armorItem.getDefensePower(BodyType.HEAD,2)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> armorItem.getDefensePower(BodyType.HEAD, 2)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
 
     }
 
@@ -209,11 +230,15 @@ class ItemTest {
     @Test
     void givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue() {
         //given from setUp
-        int expectedAttack = 3;
-        //when
-        int actualAttack = weaponItem.getAttackPower(2);
-        //then
-        assertThat(actualAttack).isEqualTo(expectedAttack);
+        final int[] actualAttack = new int[1];
+        final int expectedAttack = 3;
+
+        Assertions.assertAll(
+                //when
+                () -> actualAttack[0] = weaponItem.getAttackPower(2),
+                //then
+                () -> assertThat(actualAttack[0]).isEqualTo(expectedAttack)
+        );
     }
 
     @Test
@@ -233,91 +258,117 @@ class ItemTest {
     }
 
     @Test
-    void givenEmptyItem_WhenSetHeldIn_ThenSetProperly(){
+    void givenEmptyItem_WhenSetHeldIn_ThenSetProperly() {
         //given
         Item testItem = new Item();
-        //when
-        testItem.setHeldIn(BodyType.RIGHT_ARM);
-        //then
-        assertThat(testItem.getHeldIn()).isEqualTo(BodyType.RIGHT_ARM);
-    }
-    @Test
-    void givenApplesItem_WhenSetHeldIn_ThenSetProperly(){
-        //given from setUp
-        //when
-        applesItem.setHeldIn(BodyType.TORSO);
-        //then
-        assertThat(applesItem.getHeldIn()).isEqualTo(BodyType.TORSO);
-    }
-    @Test
-    void givenWeaponItem_WhenSetHeldInRightHand_ThenSetProperly(){
-        //given from setUp
-        //when
-        weaponItem.setHeldIn(BodyType.RIGHT_ARM);
-        //then
-        assertThat(weaponItem.getHeldIn()).isEqualTo(BodyType.RIGHT_ARM);
-    }
-    @Test
-    void givenWeaponItem_WhenSetHeldInNull_ThenSetProperly(){
-        //given from setUp
-        //when
-        weaponItem.setHeldIn(null);
-        //then
-        assertThat(weaponItem.getHeldIn()).isNull();
-    }
-    @Test
-    void givenWeaponItem_WhenSetHeldInTorso_ThenThrowInvalidBodyTypeException(){
-        //given from setUp
-        //when
-        //then
-        assertThatThrownBy(()->weaponItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyType.class);
-    }
-    @Test
-    void givenShieldItem_WhenSetHeldInLeftArm_ThenSetProperly(){
-        //given from setUp
-        //when
-        shieldItem.setHeldIn(BodyType.LEFT_ARM);
-        //then
-        assertThat(shieldItem.getHeldIn()).isEqualTo(BodyType.LEFT_ARM);
+
+        Assertions.assertAll(
+                //when
+                () -> testItem.setHeldIn(BodyType.RIGHT_ARM),
+                //then
+                () -> assertThat(testItem.getHeldIn()).isEqualTo(BodyType.RIGHT_ARM)
+        );
     }
 
     @Test
-    void givenBadCreatedArmorItem_WhenSetHeldIn_ThenThrowInvalidArmorBodyPartsCoveredInPercentage(){
+    void givenApplesItem_WhenSetHeldIn_ThenSetProperly() {
+        //given from setUp
+        Assertions.assertAll(
+                //when
+                () -> applesItem.setHeldIn(BodyType.TORSO),
+                //then
+                () -> assertThat(applesItem.getHeldIn()).isEqualTo(BodyType.TORSO)
+        );
+    }
+
+    @Test
+    void givenWeaponItem_WhenSetHeldInRightHand_ThenSetProperly() {
+        //given from setUp
+        Assertions.assertAll(
+                //when
+                () -> weaponItem.setHeldIn(BodyType.RIGHT_ARM),
+                //then
+                () -> assertThat(weaponItem.getHeldIn()).isEqualTo(BodyType.RIGHT_ARM)
+        );
+    }
+
+    @Test
+    void givenWeaponItem_WhenSetHeldInNull_ThenSetProperly() {
+        //given from setUp
+        Assertions.assertAll(
+                //when
+                () -> weaponItem.setHeldIn(null),
+                //then
+                () -> assertThat(weaponItem.getHeldIn()).isNull()
+        );
+    }
+
+    @Test
+    void givenWeaponItem_WhenSetHeldInTorso_ThenThrowInvalidBodyTypeException() {
+        //given from setUp
+        //when
+        //then
+        assertThatThrownBy(() -> weaponItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyType.class);
+    }
+
+    @Test
+    void givenShieldItem_WhenSetHeldInTorso_ThenThrowInvalidBodyTypeException() {
+        //given from setUp
+        //when
+        //then
+        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyType.class);
+    }
+
+    @Test
+    void givenShieldItem_WhenSetHeldInLeftArm_ThenSetProperly() {
+        //given from setUp
+        Assertions.assertAll(
+                //when
+                () -> shieldItem.setHeldIn(BodyType.LEFT_ARM),
+                //then
+                () -> assertThat(shieldItem.getHeldIn()).isEqualTo(BodyType.LEFT_ARM)
+        );
+    }
+
+    @Test
+    void givenBadCreatedArmorItem_WhenSetHeldIn_ThenThrowInvalidArmorBodyPartsCoveredInPercentage() {
         //given from setUp
         //when
         armorItem.setBodyPartsCoveredInPercentage(null);
         //then
-        assertThatThrownBy(()->armorItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> armorItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
     }
+
     @Test
-    void givenBadCreatedShieldItem_WhenSetHeldIn_ThenThrowInvalidArmorBodyPartsCoveredInPercentage(){
+    void givenBadCreatedShieldItem_WhenSetHeldIn_ThenThrowInvalidArmorBodyPartsCoveredInPercentage() {
         //given from setUp
         //when
         shieldItem.setBodyPartsCoveredInPercentage(null);
         //then
-        assertThatThrownBy(()->shieldItem.setHeldIn(BodyType.LEFT_ARM)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.LEFT_ARM)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
     }
+
     @Test
-    void givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher(){
+    void givenShieldItem_WhenSetHeldInRightArm_ThenBodyPartsCoveredInPercentageForRightHandIsHigher() {
         //given from setUp
         //when
-        shieldItem.setHeldIn(BodyType.RIGHT_ARM);
-        int leftArmPercentage = shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.LEFT_ARM);
-        int rightArmPercentage = shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.RIGHT_ARM);
-        //then
-        assertThat(rightArmPercentage).isGreaterThanOrEqualTo(leftArmPercentage);
+        Assertions.assertAll(
+                () -> shieldItem.setHeldIn(BodyType.RIGHT_ARM),
+                () -> assertThat(shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.RIGHT_ARM))
+                        .isGreaterThanOrEqualTo(shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.LEFT_ARM))
+        );
 
     }
+
     @Test
-    void givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher(){
+    void givenShieldItem_WhenSetHeldInLeftArm_ThenBodyPartsCoveredInPercentageForLeftHandIsHigher() {
         //given from setUp
         //when
-        shieldItem.setHeldIn(BodyType.LEFT_ARM);
-        int leftArmPercentage = shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.LEFT_ARM);
-        int rightArmPercentage = shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.RIGHT_ARM);
-        //then
-        assertThat(leftArmPercentage).isGreaterThanOrEqualTo(rightArmPercentage);
-
+        Assertions.assertAll(
+                () -> shieldItem.setHeldIn(BodyType.LEFT_ARM),
+                () -> assertThat(shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.LEFT_LEG))
+                        .isGreaterThanOrEqualTo(shieldItem.getBodyPartsCoveredInPercentage().get(BodyType.RIGHT_LEG))
+        );
     }
 
 
