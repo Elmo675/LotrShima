@@ -84,7 +84,10 @@ public class Item {
         }
         return getPower(turns - 1);
     }
-
+    public int getDefensePowerForShieldWhenBlocking(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
+        percentage = percentage == 0 ? 0 : percentage/2;
+        return getDefensePower(whereAttacked,percentage);
+    }
 
     public int getDefensePower(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
         int returned;
