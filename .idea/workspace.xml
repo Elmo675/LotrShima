@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Renamed method to more human redable name, secured minus index scenario">
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Backpack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/BackpackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LotrShima.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LotrShima.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
     </list>
@@ -23,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -64,25 +60,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LotrShimaApplication">
-    <configuration name="LotrShimaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.LotrShimaApplication" />
-      <module name="LotrShima" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BackpackTest">
+    <configuration name="BackpackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -91,13 +77,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackTest.givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -106,14 +92,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
+      <option name="METHOD_NAME" value="givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackTest.givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -122,14 +108,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
+      <option name="METHOD_NAME" value="givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackTest.givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
@@ -138,8 +124,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.ItemTest" />
-      <option name="METHOD_NAME" value="givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
+      <option name="METHOD_NAME" value="givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackpackTest.givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LotrShima" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
+      <option name="METHOD_NAME" value="givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LotrShimaApplication" />
-        <item itemvalue="JUnit.ItemTest" />
-        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenGetAttackPowerForTwoTurns_ThenGetThreeValue" />
-        <item itemvalue="JUnit.ItemTest.givenWeaponItem_WhenGetDefensePowerWithSmallerChance_ThenReturnZero" />
-        <item itemvalue="JUnit.ItemTest.givenArmorItem_WhenGetDefensePowerWithSmallerChance_ThenReturnArmorDefense" />
+        <item itemvalue="JUnit.BackpackTest" />
+        <item itemvalue="JUnit.BackpackTest.givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" />
+        <item itemvalue="JUnit.BackpackTest.givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" />
+        <item itemvalue="JUnit.BackpackTest.givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" />
+        <item itemvalue="JUnit.BackpackTest.givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633297475693</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter">
+      <created>1634079752979</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1634079752979</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +236,7 @@
     <MESSAGE value="EB/FEAT/Item entity changed, added option for holding an item in a specific BodyTypa, added method to calculate healingPower, to calculate attack Power, to calculate defense Power of a specific Item. Added 4 exceptions to handle some specific scenarios" />
     <MESSAGE value="fixing gitignore" />
     <MESSAGE value="Renamed method to more human redable name, secured minus index scenario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed method to more human redable name, secured minus index scenario" />
+    <MESSAGE value="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter" />
   </component>
 </project>

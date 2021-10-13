@@ -8,9 +8,9 @@ import pl.emlo.LotrShima.LotrShima.model.enums.BodyType;
 import pl.emlo.LotrShima.LotrShima.model.enums.ItemType;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -44,7 +44,8 @@ public class Item {
     @Builder.Default
     private int quantity = 1;
 
-    private int weight;
+    @Builder.Default
+    private int weight = 0;
 
     private double prize;
 
@@ -84,9 +85,10 @@ public class Item {
         }
         return getPower(turns - 1);
     }
+
     public int getDefensePowerForShieldWhenBlocking(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
-        percentage = percentage == 0 ? 0 : percentage/2;
-        return getDefensePower(whereAttacked,percentage);
+        percentage = percentage == 0 ? 0 : percentage / 2;
+        return getDefensePower(whereAttacked, percentage);
     }
 
     public int getDefensePower(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
@@ -166,4 +168,16 @@ public class Item {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return name.equals(item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }
