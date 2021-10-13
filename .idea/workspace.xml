@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter">
+    <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Backpack added with tests. Not tested Entity behavior but logic works properly">
       <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Backpack.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/BackpackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -215,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634079752979</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Backpack added with tests. Not tested Entity behavior but logic works properly">
+      <created>1634084408234</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1634084408234</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +244,7 @@
     <MESSAGE value="fixing gitignore" />
     <MESSAGE value="Renamed method to more human redable name, secured minus index scenario" />
     <MESSAGE value="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method needed later for Defending with shield Blocking, no test needed because it uses tested method with other parameter" />
+    <MESSAGE value="Backpack added with tests. Not tested Entity behavior but logic works properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backpack added with tests. Not tested Entity behavior but logic works properly" />
   </component>
 </project>
