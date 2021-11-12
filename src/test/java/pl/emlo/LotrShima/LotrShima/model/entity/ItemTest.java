@@ -22,7 +22,7 @@ class ItemTest {
     private final List<Integer> HEALING_HERB_POWER = List.of(1);
     private final List<Integer> SHIELD_DEFENSE_POWER = List.of(5);
     private final List<Integer> ARMOR_DEFENSE_POWER = List.of(3);
-    private HashMap<BodyType, Integer> bodyPartsCoveredInPercentage;
+    private Map<BodyType, Integer> bodyPartsCoveredInPercentage;
     private Item weaponItem;
     private Item shieldItem;
     private Item applesItem;
@@ -123,7 +123,7 @@ class ItemTest {
         final int[] actualDefensePower = new int[1];
         Assertions.assertAll(
                 //when
-                () ->  actualDefensePower[0] = armorItem.getDefensePower(BodyType.TORSO, 1),
+                () -> actualDefensePower[0] = armorItem.getDefensePower(BodyType.TORSO, 1),
                 //then
                 () -> assertThat(actualDefensePower[0]).isEqualTo(expectedDefensePower)
         );
