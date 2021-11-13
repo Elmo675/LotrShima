@@ -1,9 +1,9 @@
 package pl.emlo.LotrShima.LotrShima.model.entity;
 
 import lombok.*;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyPartsCoveredInPercentage;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyType;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidTurns;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyPartsCoveredInPercentageException;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyTypeException;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidTurnsException;
 import pl.emlo.LotrShima.LotrShima.model.enums.BodyType;
 import pl.emlo.LotrShima.LotrShima.model.enums.ItemType;
 
@@ -20,7 +20,7 @@ import java.util.Objects;
 @NoArgsConstructor
 public class Item {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -50,10 +50,6 @@ public class Item {
     private double prize;
 
 
-    public int calculateTotalWeight() {
-        return weight * quantity;
-    }
-
     public double calculateTotalPrize() {
         return prize * quantity;
     }
@@ -76,27 +72,27 @@ public class Item {
         return powerOfItem.get(index);
     }
 
-    public int getAttackPower(int turns) throws InvalidTurns {
+    public int getAttackPower(int turns) throws InvalidTurnsException {
         if (type != ItemType.WEAPON) {
             return 0;
         }
         if (turns <= 0 || turns >= 4) {
-            throw new InvalidTurns("Attack turns should be between 1 and 3, but is: " + turns);
+            throw new InvalidTurnsException("Attack turns should be between 1 and 3, but is: " + turns);
         }
         return getPower(turns - 1);
     }
 
-    public int getDefensePowerForShieldWhenBlocking(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
+    public int getDefensePowerForShieldWhenBlocking(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentageException {
         percentage = percentage == 0 ? 0 : percentage / 2;
         return getDefensePower(whereAttacked, percentage);
     }
 
-    public int getDefensePower(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentage {
+    public int getDefensePower(BodyType whereAttacked, int percentage) throws InvalidBodyPartsCoveredInPercentageException {
         int returned;
         if (type != ItemType.ARMOR && type != ItemType.SHIELD) {
             returned = 0;
         } else if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
-            throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
+            throw new InvalidBodyPartsCoveredInPercentageException("There is wrongly assigned map for an Armor Body parts covered in percentage field");
         } else {
             if (determineIfArmorWillDefend(whereAttacked, percentage)) {
                 returned = getPower(0);
@@ -139,17 +135,17 @@ public class Item {
         bodyPartsCoveredInPercentage.put(BodyType.LEFT_LEG, rightLeg);
     }
 
-    public void setHeldIn(BodyType heldIn) throws InvalidBodyPartsCoveredInPercentage, InvalidBodyType {
+    public void setHeldIn(BodyType heldIn) throws InvalidBodyPartsCoveredInPercentageException, InvalidBodyTypeException {
         switch (type) {
             case ARMOR:
                 if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
-                    throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
+                    throw new InvalidBodyPartsCoveredInPercentageException("There is wrongly assigned map for an Armor Body parts covered in percentage field");
                 }
                 this.heldIn = heldIn;
                 break;
             case SHIELD:
                 if (isBodyPartsCoveredInPercentageHasNotAllFieldsInitialized()) {
-                    throw new InvalidBodyPartsCoveredInPercentage("There is wrongly assigned map for an Armor Body parts covered in percentage field");
+                    throw new InvalidBodyPartsCoveredInPercentageException("There is wrongly assigned map for an Armor Body parts covered in percentage field");
                 }
                 if (heldIn == BodyType.LEFT_ARM) {
                     if (bodyPartsCoveredInPercentage.get(BodyType.LEFT_ARM) < bodyPartsCoveredInPercentage.get(BodyType.RIGHT_ARM)) {
@@ -162,7 +158,7 @@ public class Item {
                 }
             case WEAPON:
                 if (heldIn != null && heldIn != BodyType.LEFT_ARM && heldIn != BodyType.RIGHT_ARM)
-                    throw new InvalidBodyType("Weapons and Shields should be held in hands!!!");
+                    throw new InvalidBodyTypeException("Weapons and Shields should be held in hands!!!");
             default:
                 this.heldIn = heldIn;
         }

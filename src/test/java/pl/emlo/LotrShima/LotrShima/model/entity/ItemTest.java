@@ -3,26 +3,18 @@ package pl.emlo.LotrShima.LotrShima.model.entity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyPartsCoveredInPercentage;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyType;
-import pl.emlo.LotrShima.LotrShima.exceptions.InvalidTurns;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyPartsCoveredInPercentageException;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidBodyTypeException;
+import pl.emlo.LotrShima.LotrShima.exceptions.InvalidTurnsException;
 import pl.emlo.LotrShima.LotrShima.model.enums.BodyType;
-import pl.emlo.LotrShima.LotrShima.model.enums.ItemType;
+import pl.emlo.LotrShima.LotrShima.utils.ItemUtils;
 
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ItemTest {
-    private final List<Integer> DRAGON_SWORD_DAMAGE = List.of(1, 3, 4);
-    private final List<Integer> HEALING_HERB_POWER = List.of(1);
-    private final List<Integer> SHIELD_DEFENSE_POWER = List.of(5);
-    private final List<Integer> ARMOR_DEFENSE_POWER = List.of(3);
-    private Map<BodyType, Integer> bodyPartsCoveredInPercentage;
     private Item weaponItem;
     private Item shieldItem;
     private Item applesItem;
@@ -31,60 +23,11 @@ class ItemTest {
 
     @BeforeEach
     void setUp() {
-        bodyPartsCoveredInPercentage = generateArmorBodyPartsCoveredInPercentageForShieldItem();
-        weaponItem = Item.builder()
-                .name("Dragon Sword")
-                .type(ItemType.WEAPON)
-                .powerOfItem(DRAGON_SWORD_DAMAGE)
-                .heldIn(BodyType.RIGHT_ARM)
-                .weight(1500).prize(4000.0)
-                .build();
-
-        shieldItem = Item.builder()
-                .name("Dragon Shield")
-                .type(ItemType.SHIELD)
-                .bodyPartsCoveredInPercentage(bodyPartsCoveredInPercentage)
-                .powerOfItem(SHIELD_DEFENSE_POWER)
-                .weight(1500)
-                .prize(2000.0)
-                .build();
-
-        armorItem = Item.builder()
-                .name("Dragon Armor")
-                .type(ItemType.ARMOR)
-                .bodyPartsCoveredInPercentage(bodyPartsCoveredInPercentage)
-                .powerOfItem(ARMOR_DEFENSE_POWER)
-                .heldIn(BodyType.TORSO)
-                .weight(7000)
-                .prize(8000.0)
-                .build();
-
-        applesItem = Item.builder()
-                .name("Green Apple")
-                .type(ItemType.FOOD)
-                .quantity(100)
-                .weight(200)
-                .prize(5.32)
-                .build();
-        healingItem = Item.builder()
-                .name("healing herb")
-                .type(ItemType.MEDICINE)
-                .powerOfItem(HEALING_HERB_POWER)
-                .quantity(50)
-                .weight(1)
-                .prize(0.32)
-                .build();
-    }
-
-    private HashMap<BodyType, Integer> generateArmorBodyPartsCoveredInPercentageForShieldItem() {
-        HashMap<BodyType, Integer> armorBodyPartsCoveredInPercentage = new HashMap<>();
-        armorBodyPartsCoveredInPercentage.put(BodyType.HEAD, 5);
-        armorBodyPartsCoveredInPercentage.put(BodyType.TORSO, 40);
-        armorBodyPartsCoveredInPercentage.put(BodyType.LEFT_ARM, 30);
-        armorBodyPartsCoveredInPercentage.put(BodyType.RIGHT_ARM, 15);
-        armorBodyPartsCoveredInPercentage.put(BodyType.LEFT_LEG, 15);
-        armorBodyPartsCoveredInPercentage.put(BodyType.RIGHT_LEG, 8);
-        return armorBodyPartsCoveredInPercentage;
+        weaponItem = ItemUtils.getWeaponItem();
+        shieldItem = ItemUtils.getShieldItem();
+        armorItem = ItemUtils.getArmorItem();
+        applesItem = ItemUtils.getApplesItem();
+        healingItem = ItemUtils.getHealingItem();
     }
 
     @Test
@@ -143,17 +86,12 @@ class ItemTest {
     }
 
     @Test
-    void givenArmorItemNotHeld_WhenGetDefensePowerWithSmallerChance_ThenReturnZero() {
+    void givenArmorItemNotHeld_WhenGetDefensePowerWithSmallerChance_ThenReturnZero() throws InvalidBodyPartsCoveredInPercentageException, InvalidBodyTypeException {
         //given
         final int[] actualDefensePower = new int[1];
-        armorItem = Item.builder()
-                .name("Dragon Armor")
-                .type(ItemType.ARMOR)
-                .bodyPartsCoveredInPercentage(bodyPartsCoveredInPercentage)
-                .powerOfItem(ARMOR_DEFENSE_POWER)
-                .weight(7000)
-                .prize(8000.0)
-                .build();
+        armorItem = ItemUtils.getArmorItem();
+        armorItem.setHeldIn(null);
+
 
         Assertions.assertAll(
                 //when
@@ -182,29 +120,8 @@ class ItemTest {
         armorItem.setBodyPartsCoveredInPercentage(null);
         //when
         //then
-        assertThatThrownBy(() -> armorItem.getDefensePower(BodyType.HEAD, 2)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> armorItem.getDefensePower(BodyType.HEAD, 2)).isInstanceOf(InvalidBodyPartsCoveredInPercentageException.class);
 
-    }
-
-
-    @Test
-    void givenWeaponItem_WhenCalculateTotalWeight_ThenCalculatedProperly() {
-        //given from setUp
-        int expectedWeight = 1500;
-        //when
-        int actualWeight = weaponItem.calculateTotalWeight();
-        //then
-        assertThat(actualWeight).isEqualTo(expectedWeight);
-    }
-
-    @Test
-    void givenApplesItem_WhenCalculateTotalWeight_ThenCalculatedProperly() {
-        //given from setUp
-        int expectedWeight = 200 * 100; // there is 100 apples with 200grams per each
-        //when
-        int actualWeight = applesItem.calculateTotalWeight();
-        //then
-        assertThat(actualWeight).isEqualTo(expectedWeight);
     }
 
     @Test
@@ -246,7 +163,7 @@ class ItemTest {
         //given from setUp
         //when in then
         //then
-        assertThatThrownBy(() -> weaponItem.getAttackPower(-1)).isInstanceOf(InvalidTurns.class);
+        assertThatThrownBy(() -> weaponItem.getAttackPower(-1)).isInstanceOf(InvalidTurnsException.class);
     }
 
     @Test
@@ -254,7 +171,7 @@ class ItemTest {
         //given from setUp
         //when in then
         //then
-        assertThatThrownBy(() -> weaponItem.getAttackPower(4)).isInstanceOf(InvalidTurns.class);
+        assertThatThrownBy(() -> weaponItem.getAttackPower(4)).isInstanceOf(InvalidTurnsException.class);
     }
 
     @Test
@@ -308,7 +225,7 @@ class ItemTest {
         //given from setUp
         //when
         //then
-        assertThatThrownBy(() -> weaponItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyType.class);
+        assertThatThrownBy(() -> weaponItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyTypeException.class);
     }
 
     @Test
@@ -316,7 +233,7 @@ class ItemTest {
         //given from setUp
         //when
         //then
-        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyType.class);
+        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyTypeException.class);
     }
 
     @Test
@@ -336,7 +253,7 @@ class ItemTest {
         //when
         armorItem.setBodyPartsCoveredInPercentage(null);
         //then
-        assertThatThrownBy(() -> armorItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> armorItem.setHeldIn(BodyType.TORSO)).isInstanceOf(InvalidBodyPartsCoveredInPercentageException.class);
     }
 
     @Test
@@ -345,7 +262,7 @@ class ItemTest {
         //when
         shieldItem.setBodyPartsCoveredInPercentage(null);
         //then
-        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.LEFT_ARM)).isInstanceOf(InvalidBodyPartsCoveredInPercentage.class);
+        assertThatThrownBy(() -> shieldItem.setHeldIn(BodyType.LEFT_ARM)).isInstanceOf(InvalidBodyPartsCoveredInPercentageException.class);
     }
 
     @Test
