@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29488393-f6e2-4ac7-8955-1f29e91033ae" name="Default Changelist" comment="Backpack added with tests. Not tested Entity behavior but logic works properly">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Backpack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/BackpackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/BackpackNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidCashException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidQuantityException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/repository/BackpackRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/service/BackpackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/service/BackpackService_IntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/utils/ItemUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyPartsCoveredInPercentageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidBodyTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidItemTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/exceptions/InvalidTurnsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Backpack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/emlo/LotrShima/LotrShima/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/BackpackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/BackpackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/emlo/LotrShima/LotrShima/model/entity/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +34,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -64,84 +79,78 @@
       <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.emlo.LotrShima.LotrShima.service" />
       <recent name="pl.emlo.LotrShima.LotrShima.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BackpackTest">
-    <configuration name="BackpackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in LotrShima">
+    <configuration name="All in LotrShima" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BackpackTest.givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackService_IntegrationTest.removeItem_ShouldLowerQuantity_WhenRemovingLessItemsThanInBackpack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
-      <option name="METHOD_NAME" value="givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" />
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.service" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.service.BackpackService_IntegrationTest" />
+      <option name="METHOD_NAME" value="removeItem_ShouldLowerQuantity_WhenRemovingLessItemsThanInBackpack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BackpackTest.givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackService_IntegrationTest.sellItem_ShouldRiseCashAndDeleteItem_WhenSellingSameQuantityAsInBackpack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
-      <option name="METHOD_NAME" value="givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" />
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.service" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.service.BackpackService_IntegrationTest" />
+      <option name="METHOD_NAME" value="sellItem_ShouldRiseCashAndDeleteItem_WhenSellingSameQuantityAsInBackpack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BackpackTest.givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackService_IntegrationTest.sellItem_ShouldThrowException_WhenSellingItemThatWeDoNotHaveInBackpack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
-      <option name="METHOD_NAME" value="givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" />
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.service" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.service.BackpackService_IntegrationTest" />
+      <option name="METHOD_NAME" value="sellItem_ShouldThrowException_WhenSellingItemThatWeDoNotHaveInBackpack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BackpackTest.givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackpackService_IntegrationTest.sellItem_ShouldThrowException_WhenSellingMoreQuantityThanInBackpack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LotrShima" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.model.entity.*" />
+          <option name="PATTERN" value="pl.emlo.LotrShima.LotrShima.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity" />
-      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.model.entity.BackpackTest" />
-      <option name="METHOD_NAME" value="givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" />
+      <option name="PACKAGE_NAME" value="pl.emlo.LotrShima.LotrShima.service" />
+      <option name="MAIN_CLASS_NAME" value="pl.emlo.LotrShima.LotrShima.service.BackpackService_IntegrationTest" />
+      <option name="METHOD_NAME" value="sellItem_ShouldThrowException_WhenSellingMoreQuantityThanInBackpack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BackpackTest" />
-        <item itemvalue="JUnit.BackpackTest.givenBackpackNoItemsIn_WhenAddItem_ThenAddNewItems" />
-        <item itemvalue="JUnit.BackpackTest.givenBackpackWithAddedItem_WhenAddItem_ThenChangeQuantityOfItemInBackPack" />
-        <item itemvalue="JUnit.BackpackTest.givenBackpack_WhenGetTotalWeight_ThenReturnWeightOfAllItems" />
-        <item itemvalue="JUnit.BackpackTest.givenBackpack_WhenGetItemsByItemType_ThenResultsHasGoodSize" />
+        <item itemvalue="JUnit.All in LotrShima" />
+        <item itemvalue="JUnit.BackpackService_IntegrationTest.removeItem_ShouldLowerQuantity_WhenRemovingLessItemsThanInBackpack" />
+        <item itemvalue="JUnit.BackpackService_IntegrationTest.sellItem_ShouldThrowException_WhenSellingItemThatWeDoNotHaveInBackpack" />
+        <item itemvalue="JUnit.BackpackService_IntegrationTest.sellItem_ShouldThrowException_WhenSellingMoreQuantityThanInBackpack" />
+        <item itemvalue="JUnit.BackpackService_IntegrationTest.sellItem_ShouldRiseCashAndDeleteItem_WhenSellingSameQuantityAsInBackpack" />
       </list>
     </recent_temporary>
   </component>
